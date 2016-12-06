@@ -626,7 +626,7 @@ EOT;
 			$product = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table_name WHERE id = %d",$order["product_id"]) , ARRAY_A, 0);
 			$wpdb->update( $table_name, array('downloads' => $product["downloads"] + 1), array('id' => $product["id"]));
 			
-			$Amount = intval(ceil($product["cost"]*10))
+			$Amount = intval(ceil($product["cost"]*10));
 		
 			$Server = 'http://api.nextpay.org/gateway/verify.wsdl';
 			$client = new SoapClient( $Server, array('encoding' => 'UTF-8')); 
