@@ -803,7 +803,7 @@ EOT;
 					else
 					{
 					    header('Location: '.$request_payment."/$trans_id");
-					    unset( $this );
+					    
 					    exit(0);
 					}
 				} 
@@ -812,7 +812,7 @@ EOT;
 					echo $this->Fault($result->code);
 				}
 				// Exit
-				unset( $this );
+				exit(0);
 			}
 			else
 			{
